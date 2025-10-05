@@ -65,7 +65,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Theo Dõi Chúng Tôi</h4>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com/yarnary"
+                href="https://www.facebook.com/Yarnary.vn"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"

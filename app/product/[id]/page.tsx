@@ -180,9 +180,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                     <Heart className="w-5 h-5" />
                   </Button>
                 </div>
-                <Button variant="outline" className="w-full bg-transparent">
+                {/* <Button variant="outline" className="w-full bg-transparent">
                   Thêm Vào Giỏ Hàng
-                </Button>
+                </Button> */}
               </div>
 
               {/* Service Info */}

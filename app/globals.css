@@ -123,3 +123,26 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* globals.css */
+html, body {
+  font-family: var(--font-be-vietnam), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+/* Giữ kích thước thanh cuộn -> tránh reflow khi xuất hiện */
+.fullpage {
+  scrollbar-gutter: stable both-edges;
+  overscroll-behavior-y: contain;     /* chặn bounce chaining */
+  -webkit-overflow-scrolling: touch;  /* mượt trên iOS */
+}
+
+/* Ưu tiên vẽ nhanh vùng nhìn thấy */
+section, img { content-visibility: auto; }
+
+/* Nếu người dùng chọn giảm chuyển động -> tắt animation */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fullpage { scroll-behavior: auto; }
+}
