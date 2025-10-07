@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi">
-      <body className={`flex flex-col min-h-screen overflow-hidden ${beVN.variable}`}>
+      <body className={`flex flex-col min-h-screen overflow-x-hidden ${beVN.variable}`}>
         <Header />
         {/* phần cuộn sẽ do từng page quản lý */}
-        <main className="flex-1 overflow-hidden">{children}</main>
+        <main className="flex-1 overflow-hidden w-full">{children}</main>
         <Analytics />
       </body>
     </html>
