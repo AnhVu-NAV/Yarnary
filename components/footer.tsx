@@ -11,7 +11,7 @@ async function subscribe(formData: FormData) {
 
 export function Footer() {
   return (
-    <section className="w-screen h-screen grid grid-rows-[minmax(0,2fr)_minmax(0,1fr)]">
+    <section className="w-full md:w-screen h-auto md:h-screen grid grid-rows-[auto_auto] md:grid-rows-[minmax(0,2fr)_minmax(0,1fr)]">
       {/* =================== CTA (2/3) =================== */}
       <div className="relative flex items-center justify-center text-white">
         {/* mesh gradient nền */}
@@ -33,24 +33,24 @@ export function Footer() {
             Bắt đầu thiết kế chỉ trong vài phút. Chúng tôi sẽ liên hệ tư vấn ngay.
           </p>
 
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <Link href="/custom">
+          <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+            <a href="/custom" className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="px-7 py-6 bg-white text-purple-700 hover:bg-white/90 shadow-lg shadow-black/10"
+                className="w-full px-7 py-6 bg-white text-purple-700 hover:bg-white/90 shadow-lg shadow-black/10"
               >
                 Thiết kế ngay
               </Button>
-            </Link>
-            <Link href="/collections">
+            </a>
+
+            <a href="/collections" className="w-full sm:w-auto">
               <Button
                 size="lg"
-                variant="outline"
-                className="px-7 py-6 border-white/70 text-white hover:bg-white/10 backdrop-blur"
+                className="w-full px-7 py-6 bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-medium shadow-lg shadow-black/10 hover:opacity-90 transition"
               >
                 Khám phá bộ sưu tập
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -60,23 +60,19 @@ export function Footer() {
           viewBox="0 0 1440 160"
           preserveAspectRatio="none"
           aria-hidden="true"
-          style={{ transform: "translateY(2px)" }} // đẩy nhẹ để liền mép
+          style={{ transform: "translateY(2px)" }}
         >
-          {/* màu phải trùng với footer */}
-          <path
-            d="M0,80 C240,140 480,20 720,60 C960,100 1200,140 1440,80 L1440,160 L0,160 Z"
-            fill="#140F21"
-          />
+          <path d="M0,80 C240,140 480,20 720,60 C960,100 1200,140 1440,80 L1440,160 L0,160 Z" fill="#140F21" />
         </svg>
       </div>
 
-      {/* =================== FOOTER (1/3) =================== */}
-      <footer className="relative bg-[#0b0b12] text-gray-300 -mt-[1px] overflow-hidden">
+      {/* =================== FOOTER =================== */}
+      <footer className="relative bg-[#0b0b12] text-gray-300 overflow-x-hidden">
         {/* texture nhẹ */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,rgba(168,85,247,0.08),transparent),radial-gradient(1000px_500px_at_50%_120%,rgba(236,72,153,0.06),transparent)]" />
 
         {/* ===== SITEMAP ===== */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div>
               <Link href="/" className="text-xl font-bold text-white">Yarnary</Link>
@@ -90,7 +86,7 @@ export function Footer() {
               <ul className="mt-4 space-y-2 text-sm">
                 <li><Link href="/" className="hover:text-white/90">Trang Chủ</Link></li>
                 <li><Link href="/collections" className="hover:text-white/90">Bộ Sưu Tập</Link></li>
-                <li><Link href="/brand" className="hover:text-white/90">Thương Hiệu</Link></li>
+                <li><Link href="/popular" className="hover:text-white/90">Phổ Biến</Link></li>
                 <li><Link href="/about" className="hover:text-white/90">Về Chúng Tôi</Link></li>
               </ul>
             </div>
@@ -128,19 +124,19 @@ export function Footer() {
 
           {/* ===== NEWSLETTER CARD ===== */}
           <div className="mt-10 md:mt-14">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-2xl bg-white/5 backdrop-blur px-5 py-6 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
+            <div className="relative flex flex-col md:flex-row items-center justify-between gap-4 rounded-2xl bg-white/5 backdrop-blur px-5 py-6 ring-1 ring-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
               <div className="text-center md:text-left">
                 <h3 className="text-base md:text-lg font-semibold text-white">Nhận ưu đãi & mẫu mới mỗi tháng</h3>
                 <p className="text-xs md:text-sm text-gray-400">Đăng ký nhận bản tin – hủy bất cứ lúc nào.</p>
               </div>
 
-              <form className="w-full md:w-auto flex items-center gap-3" action={subscribe}>
+              <form className="w-full md:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-3" action={subscribe}>
                 <input
                   name="email"
                   type="email"
                   required
                   placeholder="Email của bạn"
-                  className="w-full md:w-80 rounded-xl bg-white/10 text-white placeholder:text-gray-400 outline-none border border-white/10 focus:border-white/30 px-4 py-3"
+                  className="w-full sm:w-80 rounded-xl bg-white/10 text-white placeholder:text-gray-400 outline-none border border-white/10 focus:border-white/30 px-4 py-3"
                 />
                 <button
                   type="submit"
