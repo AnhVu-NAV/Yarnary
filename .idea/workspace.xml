@@ -48,7 +48,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/giap-thaidinh/Project/Yarnary/public/thumbs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/giap-thaidinh/Project/Yarnary/public/models&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -62,8 +62,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/thumbs" />
       <recent name="$PROJECT_DIR$/public/models" />
+      <recent name="$PROJECT_DIR$/public/thumbs" />
       <recent name="$PROJECT_DIR$/public/images/model" />
     </key>
   </component>
@@ -108,7 +108,9 @@
       <workItem from="1761674841492" duration="3487000" />
       <workItem from="1761678901201" duration="58000" />
       <workItem from="1761679537711" duration="338000" />
-      <workItem from="1761702164105" duration="2879000" />
+      <workItem from="1761702164105" duration="4083000" />
+      <workItem from="1761720593080" duration="57000" />
+      <workItem from="1761720668291" duration="69000" />
     </task>
     <servers />
   </component>

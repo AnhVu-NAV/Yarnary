@@ -33,6 +33,7 @@ export default function CustomBagPage() {
 
     // 3D model
     const [selected, setSelected] = useState<BagModelMeta>(BAG_MODELS[0]);
+    const [variantIndex, setVariantIndex] = useState(0);
 
     // --- THÊM MỚI: State cho tính năng AI ---
     const [isGenerating, setIsGenerating] = useState(false);
@@ -135,15 +136,40 @@ export default function CustomBagPage() {
                 <main className="p-6 space-y-6">
                     <h1 className="text-3xl font-bold text-center mb-12">Preview Túi 3D</h1>
 
-                    <BagViewer model={selected} />
+                    {/* 3D Viewer */}
+                    <BagViewer model={selected} variantIndex={variantIndex} />
 
+                    {/* Dot Switcher (nếu có nhiều variants) */}
+                    {selected.variants && selected.variants.length > 1 && (
+                        <div className="flex justify-center space-x-3 mt-3">
+                            {selected.variants.map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setVariantIndex(i)}
+                                    className={`w-3 h-3 rounded-full transition ${
+                                        variantIndex === i
+                                            ? "bg-purple-600"
+                                            : "bg-gray-300 hover:bg-purple-400"
+                                    }`}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Danh sách các túi */}
                     <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        {BAG_MODELS.map(m => (
+                        {BAG_MODELS.map((m) => (
                             <button
                                 key={m.id}
-                                onClick={() => setSelected(m)}
-                                className={`flex items-center gap-3 rounded-lg border p-2 text-left transition
-              ${selected.id === m.id ? "border-purple-600 bg-purple-50" : "border-gray-200 hover:border-purple-300"}`}
+                                onClick={() => {
+                                    setSelected(m);
+                                    setVariantIndex(0);
+                                }}
+                                className={`flex items-center gap-3 rounded-lg border p-2 text-left transition ${
+                                    selected.id === m.id
+                                        ? "border-purple-600 bg-purple-50"
+                                        : "border-gray-200 hover:border-purple-300"
+                                }`}
                             >
                                 <img
                                     src={m.thumb ?? "/placeholder.png"}
@@ -157,6 +183,7 @@ export default function CustomBagPage() {
                         ))}
                     </section>
                 </main>
+                );
 
                 {/* Process Steps */}
                 <section className="py-16 bg-white">
