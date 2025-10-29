@@ -131,6 +131,33 @@ export default function CustomBagPage() {
                     </div>
                 </div>
 
+                {/* 3D Bag Model Selection */}
+                <main className="p-6 space-y-6">
+                    <h1 className="text-3xl font-bold text-center mb-12">Preview Túi 3D</h1>
+
+                    <BagViewer model={selected} />
+
+                    <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        {BAG_MODELS.map(m => (
+                            <button
+                                key={m.id}
+                                onClick={() => setSelected(m)}
+                                className={`flex items-center gap-3 rounded-lg border p-2 text-left transition
+              ${selected.id === m.id ? "border-purple-600 bg-purple-50" : "border-gray-200 hover:border-purple-300"}`}
+                            >
+                                <img
+                                    src={m.thumb ?? "/placeholder.png"}
+                                    alt={m.name}
+                                    className="h-16 w-16 rounded object-cover"
+                                />
+                                <div>
+                                    <div className="font-medium">{m.name}</div>
+                                </div>
+                            </button>
+                        ))}
+                    </section>
+                </main>
+
                 {/* Process Steps */}
                 <section className="py-16 bg-white">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -167,33 +194,6 @@ export default function CustomBagPage() {
                         </div>
                     </div>
                 </section>
-
-                {/* 3D Bag Model Selection */}
-                <main className="p-6 space-y-6">
-                    <h1 className="text-2xl font-bold">Preview Túi 3D</h1>
-
-                    <BagViewer model={selected} />
-
-                    <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        {BAG_MODELS.map(m => (
-                            <button
-                                key={m.id}
-                                onClick={() => setSelected(m)}
-                                className={`flex items-center gap-3 rounded-lg border p-2 text-left transition
-              ${selected.id === m.id ? "border-purple-600 bg-purple-50" : "border-gray-200 hover:border-purple-300"}`}
-                            >
-                                <img
-                                    src={m.thumb ?? "/placeholder.png"}
-                                    alt={m.name}
-                                    className="h-16 w-16 rounded object-cover"
-                                />
-                                <div>
-                                    <div className="font-medium">{m.name}</div>
-                                </div>
-                            </button>
-                        ))}
-                    </section>
-                </main>
 
                 <section className="py-16 bg-gray-50">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
